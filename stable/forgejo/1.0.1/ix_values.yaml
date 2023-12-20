@@ -130,15 +130,6 @@ workload:
           envFrom:
             - configMapRef:
                 name: gitea-env
-          volumeMounts:
-            - name: init
-              mountPath: "/usr/sbin"
-            - name: temp
-              mountPath: "/tmp"
-            - name: config
-              mountPath: "/etc/gitea/conf"
-            - name: data
-              mountPath: "/data"
         2-configure-gitea:
           enabled: true
           imageSelector: image
@@ -148,13 +139,6 @@ workload:
           envFrom:
             - configMapRef:
                 name: gitea-env
-          volumeMounts:
-            - name: init
-              mountPath: "/usr/sbin"
-            - name: temp
-              mountPath: "/tmp"
-            - name: data
-              mountPath: "/data"
       containers:
         main:
           probes:
@@ -164,8 +148,8 @@ workload:
               spec:
                 httpGet:
                   path: /api/healthz
-                  # port: "{{ .Values.service.main.ports.main.port }}"
-                  port: http
+                  port: "{{ .Values.service.main.ports.main.port }}"
+                  # port: http
                 initialDelaySeconds: 200
                 timeoutSeconds: 5
                 periodSeconds: 10
@@ -177,8 +161,8 @@ workload:
               spec:
                 httpGet:
                   path: /api/healthz
-                  # port: "{{ .Values.service.main.ports.main.port }}"
-                  port: http
+                  port: "{{ .Values.service.main.ports.main.port }}"
+                  # port: http
                 initialDelaySeconds: 200
                 timeoutSeconds: 5
                 periodSeconds: 10
