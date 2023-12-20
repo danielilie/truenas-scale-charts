@@ -148,8 +148,8 @@ workload:
               spec:
                 httpGet:
                   path: /api/healthz
-                  port: "{{ .Values.service.main.ports.main.port }}"
-                  # port: http
+                  # port: "{{ .Values.service.main.ports.main.port }}"
+                  port: 3000
                 initialDelaySeconds: 200
                 timeoutSeconds: 5
                 periodSeconds: 10
@@ -161,8 +161,8 @@ workload:
               spec:
                 httpGet:
                   path: /api/healthz
-                  port: "{{ .Values.service.main.ports.main.port }}"
-                  # port: http
+                  # port: "{{ .Values.service.main.ports.main.port }}"
+                  port: 3000
                 initialDelaySeconds: 200
                 timeoutSeconds: 5
                 periodSeconds: 10
