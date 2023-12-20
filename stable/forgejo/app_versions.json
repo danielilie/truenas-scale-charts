@@ -44,7 +44,8 @@
         "code review",
         "wiki",
         "gitea",
-        "gogs"
+        "gogs",
+        "forgejo"
       ],
       "dependencies": [
         {
@@ -586,7 +587,7 @@
                 "label": "APP_NAME",
                 "schema": {
                   "type": "string",
-                  "default": "Gitea",
+                  "default": "Forgejo",
                   "required": true
                 }
               },
