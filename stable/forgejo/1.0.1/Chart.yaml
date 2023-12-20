@@ -2,7 +2,7 @@ kubeVersion: ">=1.24.0-0"
 apiVersion: v2
 name: forgejo
 version: 1.0.1
-appVersion: "1.21.2"
+appVersion: "1.21.2-1-rootless"
 description: Self hosted GIT repositories
 home: https://github.com/chadweimer/charts/charts/forgejo
 icon: https://codeberg.org/forgejo/forgejo/raw/branch/forgejo/assets/logo.svg
