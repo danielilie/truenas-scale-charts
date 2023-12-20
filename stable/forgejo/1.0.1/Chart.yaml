@@ -9,7 +9,7 @@ icon: https://codeberg.org/forgejo/forgejo/raw/branch/forgejo/assets/logo.svg
 deprecated: false
 dependencies:
   - name: common
-    version: 14.3.5
+    version: 16.2.7
     repository: https://library-charts.truecharts.org
     condition: ""
     alias: ""
