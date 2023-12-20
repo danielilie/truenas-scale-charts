@@ -10,10 +10,10 @@
       "healthy_error": null,
       "home": "https://github.com/chadweimer/charts/charts/forgejo",
       "location": "/catalog/stable/forgejo",
-      "latest_version": "1.0.5",
-      "latest_app_version": "1.20.4",
-      "latest_human_version": "1.20.4_1.0.5",
-      "last_update": "2023-09-11 14:51:20",
+      "latest_version": "1.0.1",
+      "latest_app_version": "1.21.2",
+      "latest_human_version": "1.21.2_1.0.1",
+      "last_update": "2023-12-12 22:22:20",
       "name": "forgejo",
       "recommended": false,
       "title": "Forgejo",
@@ -27,6 +27,39 @@
         "https://codeberg.org/forgejo/-/packages/container/forgejo"
       ],
       "icon_url": "https://codeberg.org/forgejo/forgejo/raw/branch/forgejo/assets/logo.svg"
+    },
+    "immich": {
+      "app_readme": "<h1>Immich</h1>\n<p>High performance self-hosted photo and video backup solution.</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "High performance self-hosted photo and video backup solution.",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://truecharts.org/charts/stable/immich",
+      "location": "/catalog/stable/immich",
+      "latest_version": "1.0.1",
+      "latest_app_version": "1.88.2",
+      "latest_human_version": "1.88.2_1.0.1",
+      "last_update": "2023-12-12 13:20:40",
+      "name": "immich",
+      "recommended": false,
+      "title": "Immich",
+      "maintainers": [
+        {
+          "name": "TrueCharts",
+          "email": "info@truecharts.org",
+          "url": "https://truecharts.org"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/truecharts/charts/tree/master/charts/stable/immich",
+        "https://hub.docker.com/r/altran1502/immich-server",
+        "https://github.com/immich-app/immich"
+      ],
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/immich.png"
     }
   },
   "test": {}
