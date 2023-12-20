@@ -139,11 +139,28 @@ workload:
         main:
           probes:
             liveness:
-              type: tcp
+              type: http
+              path: /api/healthz
+              port: "{{ .Values.service.main.ports.main.port }}"
             readiness:
-              type: tcp
+              type: http
+              path: /api/healthz
+              port: "{{ .Values.service.main.ports.main.port }}"
             startup:
               type: tcp
+            # liveness:
+            #   path: "/api/ping"
+            #   port: "{{ .Values.service.main.ports.main.port }}"
+            #   httpHeaders:
+            #     Host: '{{ tpl .Values.workload.main.podSpec.containers.main.env.APP_BASE_URL $ | replace "https://" "" | replace "http://" "" }}'
+            # readiness:
+            #   path: "/api/ping"
+            #   port: "{{ .Values.service.main.ports.main.port }}"
+            #   httpHeaders:
+            #     Host: '{{ tpl .Values.workload.main.podSpec.containers.main.env.APP_BASE_URL $ | replace "https://" "" | replace "http://" "" }}'
+            # startup:
+            #   type: tcp
+            #   port: "{{ .Values.service.main.ports.main.port }}"
           envFrom:
             - configMapRef:
                 name: gitea-env
