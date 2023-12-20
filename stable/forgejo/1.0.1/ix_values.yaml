@@ -103,6 +103,9 @@ cnpg:
 # --  memcached dependency settings
 memcached:
   enabled: true
+  imagePullSecrets: []
+
+imagePullSecrets: []
 
 portal:
   open:
@@ -143,33 +146,32 @@ workload:
         main:
           probes:
             liveness:
-              custom: true
               enabled: true
-              spec:
-                httpGet:
-                  path: /api/healthz
-                  # port: "{{ .Values.service.main.ports.main.port }}"
-                  port: 3000
-                initialDelaySeconds: 200
-                timeoutSeconds: 5
-                periodSeconds: 10
-                successThreshold: 1
-                failureThreshold: 10
+              tcpSocket:
+                port: http
+              initialDelaySeconds: 200
+              timeoutSeconds: 5
+              periodSeconds: 10
+              successThreshold: 1
+              failureThreshold: 10
             readiness:
-              custom: true
               enabled: true
-              spec:
-                httpGet:
-                  path: /api/healthz
-                  # port: "{{ .Values.service.main.ports.main.port }}"
-                  port: 3000
-                initialDelaySeconds: 200
-                timeoutSeconds: 5
-                periodSeconds: 10
-                successThreshold: 1
-                failureThreshold: 10
+              tcpSocket:
+                port: http
+              initialDelaySeconds: 200
+              timeoutSeconds: 5
+              periodSeconds: 10
+              successThreshold: 1
+              failureThreshold: 10
             startup:
-              type: tcp
+              enabled: true
+              tcpSocket:
+                port: http
+              initialDelaySeconds: 60
+              timeoutSeconds: 1
+              periodSeconds: 10
+              successThreshold: 1
+              failureThreshold: 10
           envFrom:
             - configMapRef:
                 name: gitea-env
